@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Widowmaker — A psychological thriller. Feature-length production by ExauLuc Studio. Digital press dossier.">
+  <title>The Widowmaker — ExauLuc Studio</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230E0E0E'/><text x='4' y='24' font-family='Georgia' font-size='22' fill='%23B8A898'>E</text></svg>">
+  <style>
+    /* Page-specific refinements */
+    .project-identity {
+      background: var(--void);
+    }
+
+    .widowmaker-bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    /* Poster as background with heavy vignette */
+    .widowmaker-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('assets/img/WDM_IMG_Poster1_v2.0.png');
+      background-size: cover;
+      background-position: center 30%;
+      opacity: 0.18;
+    }
+
+    .widowmaker-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(8,8,8,0.55) 0%, rgba(8,8,8,0.88) 60%, rgba(8,8,8,1.0) 100%);
+    }
+
+    .widowmaker-type-bg {
+      position: absolute;
+      right: -80px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: var(--font-display);
+      font-size: 22vw;
+      font-weight: 300;
+      color: rgba(184,168,152,0.025);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    /* ── GALLERY IMAGES ── */
+    .gallery-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease, opacity 0.3s ease;
+      opacity: 0.85;
+    }
+    .gallery-grid__item:hover .gallery-img {
+      transform: scale(1.03);
+      opacity: 1;
+    }
+
+    /* Gallery caption overlay */
+    .gallery-grid__item {
+      position: relative;
+      overflow: hidden;
+    }
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1rem 1.25rem 0.85rem;
+      background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(184,168,152,0.75);
+      pointer-events: none;
+    }
+
+    /* ── VIDEO PLAYER ── */
+    .teaser-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      background: #000;
+    }
+
+    /* Key art panel in hero */
+    .poster-panel {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .poster-panel img {
+      height: 320px;
+      width: auto;
+      object-fit: contain;
+      opacity: 0.9;
+      filter: drop-shadow(0 0 40px rgba(180,0,26,0.2));
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVIGATION ── -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__wordmark">EXAULUC</a>
+      <ul class="nav__links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="partnerships.html">Partnerships</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-drawer">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav__drawer" id="nav-drawer" role="dialog" aria-label="Navigation menu">
+    <div class="container">
+      <button class="nav__drawer-close btn btn--text" style="margin-bottom: 3rem;">✕ &nbsp;Close</button>
+      <ul class="nav__drawer-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="partnerships.html">Partnerships</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ── PROJECT IDENTITY ── -->
+    <section class="project-identity" aria-labelledby="project-title" style="position: relative; overflow: hidden;">
+      <div class="widowmaker-bg">
+        <span class="widowmaker-type-bg" aria-hidden="true">TW</span>
+      </div>
+      <div class="container" style="position: relative; z-index: 1;">
+
+        <div class="project-identity__label">
+          <a href="projects.html" class="meta" style="transition: color var(--dur-fast);"
+             onmouseover="this.style.color='var(--text-primary)'"
+             onmouseout="this.style.color=''">← Projects</a>
+          <span class="meta" style="margin: 0 var(--space-3);">/</span>
+          <span class="meta">ExauLuc Studio</span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: var(--space-4); margin-bottom: var(--space-6);">
+          <span class="status-dot status-dot--active"></span>
+          <span class="label">In Production</span>
+          <span class="meta" style="margin-left: var(--space-4);">ExauLuc Studio &nbsp;·&nbsp; Xido Pictures &nbsp;·&nbsp; Zeus Studios &nbsp;·&nbsp; 2025</span>
+        </div>
+
+        <!-- Title + Poster side by side -->
+        <div style="display: grid; grid-template-columns: 1fr auto; align-items: end; gap: var(--space-12);">
+          <div>
+            <h1 class="project-identity__title fade-in" id="project-title">The<br>Widowmaker</h1>
+            <p class="project-identity__logline fade-in">
+              A feature-length automotive thriller.<br>
+              Built with cinematic discipline inside the Roblox engine.
+            </p>
+          </div>
+          <div class="poster-panel fade-in" aria-label="Official poster">
+            <img
+              src="assets/img/WDM_IMG_Poster1_v2.0.png"
+              alt="The Widowmaker — Official Poster"
+              loading="eager"
+            >
+          </div>
+        </div>
+
+        <div class="project-identity__meta-grid fade-in">
+          <div class="project-identity__meta-item">
+            <p class="meta">Format</p>
+            <p class="val">Feature Film / Machinima</p>
+          </div>
+          <div class="project-identity__meta-item">
+            <p class="meta">Genre</p>
+            <p class="val">Automotive Thriller / Speculative Sci-Fi</p>
+          </div>
+          <div class="project-identity__meta-item">
+            <p class="meta">Engine</p>
+            <p class="val">Roblox</p>
+          </div>
+          <div class="project-identity__meta-item">
+            <p class="meta">Division</p>
+            <p class="val">ExauLuc Studio</p>
+          </div>
+          <div class="project-identity__meta-item">
+            <p class="meta">Co-Production</p>
+            <p class="val">Xido Pictures, Zeus Pictures</p>
+          </div>
+          <div class="project-identity__meta-item">
+            <p class="meta">Production Stage</p>
+            <p class="val">Pre-Production</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- == TEASER / TRAILER (2.39:1 safe) == -->
+<section class="trailer-section" aria-label="Teaser">
+  <div class="container">
+    <div class="trailer-section__inner" style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;">
+
+      <div class="trailer-section__info">
+        <p class="label trailer-section__info-label">Official Teaser</p>
+        <h2 class="trailer-section__title">The Widowmaker</h2>
+        <p class="trailer-section__body">
+          Second teaser — in production. Full trailer and promotional materials will follow on completion.
+        </p>
+        <p style="margin-top:0.75rem;">
+          For press access to pre-release materials, contact
+          <a href="mailto:press@exauluc.com" style="color:var(--accent);border-bottom:1px solid rgba(255,255,255,.08);">press@exauluc.com</a>.
+        </p>
+      </div>
+
+      <div class="trailer-embed" style="display:flex;align-items:center;justify-content:center;">
+        <div class="teaser-wrapper" aria-hidden="false" style="width:100%;">
+          <video class="teaser-video"
+                 controls
+                 preload="metadata"
+                 poster="assets/img/WDM_IMG_Poster1_v1.0.png"
+                 aria-label="The Widowmaker — Official Teaser">
+            <source src="assets/media/WDM_VID_Teaser_v1.0.mp4" type="video/mp4">
+            Your browser does not support the video element.
+          </video>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    <!-- == SYNOPSIS (updated) == -->
+<section class="synopsis-section" aria-labelledby="synopsis-title">
+  <div class="container">
+    <div class="synopsis-section__inner">
+      <div class="synopsis-section__label-col">
+        <p class="label" id="synopsis-title">Synopsis</p>
+      </div>
+      <div class="synopsis-section__body">
+        <p>
+          After the mysterious death of Kazuo Hoshino behind the wheel of the GD808 VX-T
+          prototype, Aiko Hoshino, a brilliant but tormented engineer, infiltrates the forbidden
+          Gensei Hills circuit to uncover the truth. Competing against an experimental vehicle
+          whose behaviour appears to adapt and against a silent corporate machine, she plunges
+          into a paranoid race where mastery of the car may demand the ultimate sacrifice.
+        </p>
+
+        <p style="margin-top:0.75rem;color:rgba(255,255,255,0.75);font-style:italic;font-size:0.95rem;">
+          Logline: An engineer obsessed with the truth takes the wheel of the legendary GD808 VX-T
+          to find out why it killed her brother, and how far she’ll go to tame it. 
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- ── TECHNICAL DATA ── -->
+    <section class="tech-data" aria-labelledby="tech-title">
+      <div class="container">
+        <p class="label" style="margin-bottom: var(--space-4);">Production Data</p>
+        <h2 class="tech-data__title fade-in" id="tech-title">Technical Specifications</h2>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-8);">
+
+          <div class="fade-in">
+            <table class="tech-table" role="presentation">
+              <tr>
+                <td>Format</td>
+                <td>Feature Film / Machinima — Roblox Studio Engine</td>
+              </tr>
+              <tr>
+                <td>Estimated Runtime</td>
+                <td>~108 minutes (86–119 min range)</td>
+              </tr>
+              <tr>
+                <td>Script Status</td>
+                <td>Locked</td>
+              </tr>
+              <tr>
+                <td>Aspect Ratio</td>
+                <td>1.33:1/2.39:1</td>
+              </tr>
+              <tr>
+                <td>Target Resolution</td>
+                <td>4K</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="fade-in">
+            <table class="tech-table" role="presentation">
+              <tr>
+                <td>Production Stage</td>
+                <td>Pre-Production</td>
+              </tr>
+              <tr>
+                <td>Production Division</td>
+                <td>ExauLuc Studio (Primary)</td>
+              </tr>
+              <tr>
+                <td>Co-Production</td>
+                <td>Xido Pictures, Zeus Pictures</td>
+              </tr>
+              <tr>
+                <td>Animation</td>
+                <td>ExauLuc Animation Studio</td>
+              </tr>
+              <tr>
+                <td>Score</td>
+                <td>ExauLuc Music — Original Composition</td>
+              </tr>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- == GALLERY — MAKING OF (placeholders) == -->
+<section class="gallery-section" aria-labelledby="gallery-title">
+  <div class="container">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;">
+      <p class="label" id="gallery-title">Making Of</p>
+      <span class="meta">Production stills — Pre-production</span>
+    </div>
+
+    <div class="gallery-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;">
+      <!-- 4 placeholders -->
+      <div class="gallery-grid__item" style="background:#0a0a0a;border:1px solid #111;padding:36px;display:flex;align-items:center;justify-content:center;min-height:160px;">
+        <h3 style="margin:0;color:#ddd;letter-spacing:0.06em;">Coming soon</h3>
+      </div>
+      <div class="gallery-grid__item" style="background:#0a0a0a;border:1px solid #111;padding:36px;display:flex;align-items:center;justify-content:center;min-height:160px;">
+        <h3 style="margin:0;color:#ddd;letter-spacing:0.06em;">Coming soon</h3>
+      </div>
+      <div class="gallery-grid__item" style="background:#0a0a0a;border:1px solid #111;padding:36px;display:flex;align-items:center;justify-content:center;min-height:160px;">
+        <h3 style="margin:0;color:#ddd;letter-spacing:0.06em;">Coming soon</h3>
+      </div>
+      <div class="gallery-grid__item" style="background:#0a0a0a;border:1px solid #111;padding:36px;display:flex;align-items:center;justify-content:center;min-height:160px;">
+        <h3 style="margin:0;color:#ddd;letter-spacing:0.06em;">Coming soon</h3>
+      </div>
+
+      <!-- keep poster visible as official key art -->
+      <div class="gallery-grid__item" style="background:#000;padding:8px;display:flex;align-items:center;justify-content:center;">
+        <img src="assets/img/WDM_IMG_Poster1_v1.0.png" alt="The Widowmaker — Official Poster" style="max-width:100%;height:auto;display:block;object-position:center 40%;">
+      </div>
+    </div>
+
+    <p style="margin-top:1rem;font-size:0.85rem;color:rgba(255,255,255,0.55);font-style:italic;">
+      Full gallery and high-resolution materials available on request — contact <a href="mailto:press@exauluc.com" style="color:var(--accent);">press@exauluc.com</a>.
+    </p>
+  </div>
+</section>
+
+    <!-- == CREDITS (updated from Role List) == -->
+<section class="credits-section" aria-labelledby="credits-title">
+  <div class="container">
+    <p class="label" id="credits-title">Credits</p>
+    <h2>The Widowmaker — Production Credits</h2>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;">
+      <div>
+        <p class="credits-block__title">Direction & Development</p>
+        <div class="credits-block__item"><span class="credits-block__role">Director / Showrunner</span><span class="credits-block__name">Exaucé Schatz</span></div>
+        <div class="credits-block__item"><span class="credits-block__role">Producer / Project Lead</span><span class="credits-block__name">Exaucé Schatz</span></div>
+        <div class="credits-block__item"><span class="credits-block__role">1st Assistant Director / Shot Manager</span><span class="credits-block__name">Yigit Polat</span></div>
+        <div class="credits-block__item"><span class="credits-block__role">2nd Assistant Director</span><span class="credits-block__name">Luca Motta (Zeus Impvct)</span></div>
+      </div>
+
+      <div>
+        <p class="credits-block__title">Art, Tech & Music</p>
+        <div class="credits-block__item"><span class="credits-block__role">Vehicle Art Director</span><span class="credits-block__name">Luca Motta (Zeus Impvct)</span></div>
+        <div class="credits-block__item"><span class="credits-block__role">Rigger</span><span class="credits-block__name">dragonangry12 (Pepperino)</span></div>
+        <div class="credits-block__item"><span class="credits-block__role">Composer / Original Score</span><span class="credits-block__name">Exaucé Schatz & Palo</span></div>
+        <div class="credits-block__item"><span class="credits-block__role">Sound Designer / Mixing</span><span class="credits-block__name">Exaucé Schatz</span></div>
+      </div>
+    </div>
+
+    <p style="margin-top:1rem;color:rgba(255,255,255,0.7);">
+      Full role list and recruitment plan available in the project documentation.
+    </p>
+  </div>
+</section>
+
+    <!-- ── PRESS KIT ── -->
+    <section class="press-kit" aria-label="Press kit">
+      <div class="container">
+        <p class="label" style="margin-bottom: var(--space-8);">Press</p>
+        <div class="press-kit__inner fade-in">
+          <div class="press-kit__info">
+            <p class="label" style="margin-bottom: var(--space-3);">Press Kit</p>
+            <h2 class="press-kit__title">The Widowmaker — Official Press Materials</h2>
+            <p class="press-kit__desc">
+              Full press kit including high-resolution images, production notes,
+              and official assets. Available to confirmed press, institutional partners,
+              and accredited publications.
+            </p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: var(--space-4); flex-shrink: 0;">
+            <a href="mailto:press@exauluc.com?subject=Press Kit Request — The Widowmaker" class="btn btn--primary">
+              Request Press Kit <span class="btn__arrow">→</span>
+            </a>
+            <span class="btn btn--ghost" style="opacity: 0.4; pointer-events: none; justify-content: center;">
+              Digital Download — Available on Release
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── BACK TO PROJECTS ── -->
+    <div style="padding: var(--space-16) 0; border-top: 1px solid var(--border);">
+      <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+        <a href="projects.html" class="btn btn--text">← Back to Projects</a>
+        <a href="contact.html" class="btn btn--ghost">Contact ExauLuc Studio</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__main">
+        <div class="footer__brand">
+          <p class="footer__wordmark">EXAULUC GROUP</p>
+          <p class="footer__tagline">Independent digital production house operating within the Roblox machinima ecosystem.</p>
+        </div>
+        <div>
+          <p class="footer__col-title">Navigate</p>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="partnerships.html">Partnerships</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__col-title">The Widowmaker</p>
+          <ul class="footer__links">
+            <li><a href="#project-title">Project Overview</a></li>
+            <li><a href="#synopsis-title">Synopsis</a></li>
+            <li><a href="#tech-title">Technical Data</a></li>
+            <li><a href="#credits-title">Credits</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__col-title">Press</p>
+          <ul class="footer__links">
+            <li><a href="mailto:press@exauluc.com">press@exauluc.com</a></li>
+            <li><a href="mailto:contact@exauluc.com">contact@exauluc.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">© ExauLuc Group / Xido Pictures / Zeus Pictures. The Widowmaker — All rights reserved. IP owned by ExauLuc Group.</p>
+        <ul class="footer__legal-links">
+          <li><a href="#">Legal</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">IP Statement</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
