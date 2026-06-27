@@ -93,28 +93,15 @@
     fadeEls.forEach(el => el.classList.add('visible'));
   }
 
-  // ── CONTACT FORM: basic submission handling ───────────────
-  const contactForm = document.querySelector('.contact-form form');
+  // ── CONTACT FORM: Formspree ───────────────────────────────
+  const contactForm = document.querySelector('form.contact-form');
   if (contactForm) {
-    contactForm.addEventListener('submit', e => {
-      e.preventDefault();
+    contactForm.addEventListener('submit', function() {
       const btn = contactForm.querySelector('[type="submit"]');
-      const originalText = btn.textContent;
-      btn.textContent = 'Sending...';
-      btn.disabled = true;
-
-      // Simulated — replace with actual form endpoint
-      setTimeout(() => {
-        btn.textContent = 'Inquiry Received';
-        const note = contactForm.querySelector('.form-note');
-        if (note) note.textContent = 'Your message has been transmitted. Expect a response within 72 hours.';
-        setTimeout(() => {
-          btn.textContent = originalText;
-          btn.disabled = false;
-          contactForm.reset();
-          if (note) note.textContent = 'All fields required. Response within 72 hours.';
-        }, 5000);
-      }, 1200);
+      if (btn) {
+        btn.innerHTML = 'Sending...';
+        btn.disabled = true;
+      }
     });
   }
 
