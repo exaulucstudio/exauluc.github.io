@@ -33,7 +33,7 @@ exauluc/
 4. Ensure `index.html` is in the root directory
 5. Configure domain `exauluc.com` to point to the hosting plan's IP
 
-FTP credentials are found in OVH Manager → Your hosting → FTP - SSH.
+FTP credentials are found in OVH Manager → Your hosting → FTP - SSH
 
 ### Option 2: OVH Object Storage + CDN (Recommended for Performance)
 
